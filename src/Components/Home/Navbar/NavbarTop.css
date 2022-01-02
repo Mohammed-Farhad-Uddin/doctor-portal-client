@@ -1,0 +1,9 @@
+.text-home , .text-admin{
+    text-decoration: none;
+}
+.text-home{
+    color: gray;
+}
+.text-admin{
+    color: black;
+}
