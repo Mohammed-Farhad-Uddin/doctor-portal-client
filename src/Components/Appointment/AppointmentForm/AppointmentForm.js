@@ -22,6 +22,7 @@ const AppointmentForm = ({ modalIsOpen, closeModal, bookingSub ,date}) => {
     const { register, handleSubmit, watch, formState: { errors } } = useForm();
     const onSubmit = data =>{ 
         // console.log(data);
+        data.status='Not Visited'
         data.services=bookingSub;
         data.appointmentDate=date;
         data.createAppointmentDate=new Date();
