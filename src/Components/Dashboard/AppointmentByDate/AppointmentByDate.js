@@ -6,6 +6,7 @@ const AppointmentByDate = ({ appointments }) => {
     // console.log(appointments)
     const handleStatusChange=(id)=>{
         const change='Visited';
+        document.getElementById("demoBtn").innerHTML = change;
         // console.log(id);
         fetch(`http://localhost:5000/changeStatus/${id}`,{
             method:"PATCH",
@@ -48,7 +49,7 @@ const AppointmentByDate = ({ appointments }) => {
                                     <td>{info.name}</td>
                                     <td>{info.email}</td>
                                     <td>7.00 pm</td>
-                                    <td><button onClick={()=>handleStatusChange(`${info._id}`)} className='btn btn-secondary'>{info.status}</button></td>
+                                    <td><button onClick={()=>handleStatusChange(`${info._id}`)} id='demoBtn' className='btn btn-secondary'>{info.status}</button></td>
                                     {/* `${info._id}` ai rkm na dile oi backend e _id:Object(45874hehf74) ei rkm undefine asbe tai bracket bitore ("35436hdd8") cotation pawar jnno oi ta korte hoi  */}
                                 </tr>)
                                 }

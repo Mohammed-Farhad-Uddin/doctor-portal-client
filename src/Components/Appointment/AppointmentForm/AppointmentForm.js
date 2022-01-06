@@ -17,33 +17,40 @@ const customStyles = {
 };
 Modal.setAppElement('#root');
 
-const AppointmentForm = ({ modalIsOpen, closeModal, bookingSub ,date}) => {
-    const [loginUser,setLoginUser]=useContext(UserSignInContext)
+const AppointmentForm = ({ modalIsOpen, closeModal, bookingSub, bookingSpace, date }) => {
+    const [loginUser, setLoginUser] = useContext(UserSignInContext)
     const { register, handleSubmit, watch, formState: { errors } } = useForm();
-    const onSubmit = data =>{ 
+    const onSubmit = data => {
         // console.log(data);
-        data.status='Not Visited'
-        data.services=bookingSub;
-        data.appointmentDate=date;
-        data.createAppointmentDate=new Date();
+        data.status = 'Not Visited'
+        data.services = bookingSub;
+        data.appointmentDate = date;
+        data.createAppointmentDate = new Date();
         // data.appointmentDate=date.toDateString();//string a convert kora hocce
         // data.createAppointmentData=new Date().toDateString();
 
-        fetch(`http://localhost:5000/addAppointment`,{
+        fetch(`http://localhost:5000/addAppointment`, {
             method: 'POST',
             body: JSON.stringify(data),
             headers: {
-              'Content-type': 'application/json; charset=UTF-8',
+                'Content-type': 'application/json; charset=UTF-8',
             },
-          })
-        .then(res=>res.json())
-        .then(result=>{
-            if(result){
-                alert('Submitted');
-                closeModal();
-            }
         })
-        
+            .then(res => res.json())
+            .then(result => {
+                if (result) {
+                    //totalSpace k kicuta dynamic korte chawa
+                    // if (bookingSpace <= 10 && bookingSpace > 0) {
+                    //     bookingSpace=bookingSpace-1;
+                    //     console.log(bookingSpace);
+                    // } else if (bookingSpace == 0) {
+                    //     document.querySelector(".submit-btn").disabled = true;
+                    // }
+                    // console.log(bookingSpace)
+                    alert('Submitted');
+                    closeModal();
+                }
+            })
     };
 
     // console.log(watch("example")); // watch input value by passing the name of it

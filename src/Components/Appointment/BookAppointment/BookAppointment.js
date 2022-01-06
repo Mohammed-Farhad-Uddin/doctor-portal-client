@@ -8,42 +8,42 @@ const BookAppointment = ({ date }) => {
             id: '1',
             subject: 'Teeth Orthodontics',
             visitingHour: '8.00 am - 9.00 am',
-            totalSpace: '10'
+            totalSpace: 10
         },
         {
             _id: '61c9b2e6f663b3a50c765952',
             id: '2',
             subject: 'Dentist',
             visitingHour: '8.00 am - 9.00 am',
-            totalSpace: '10'
+            totalSpace: 10
         },
         {
             _id: '61c9b2e6f663b3a50c765942',
             id: '3',
             subject: 'Mouth Wash',
             visitingHour: '8.00 am - 9.00 am',
-            totalSpace: '10'
+            totalSpace: 10
         },
         {
             _id: '61c9b2e6f663b3a50c765932',
             id: '4',
             subject: 'Teeth Wash',
             visitingHour: '8.00 am - 9.00 am',
-            totalSpace: '10'
+            totalSpace: 10
         },
         {
             _id: '61c9b2e6f663b3a50c765922',
             id: '5',
             subject: 'Dentist three',
             visitingHour: '8.00 am - 9.00 am',
-            totalSpace: '10'
+            totalSpace: 10
         },
         {
             _id: '61c9b2e6f663b3a50c765912',
             id: '6',
             subject: 'Mmsmsmsmsmsm',
             visitingHour: '8.00 am - 9.00 am',
-            totalSpace: '10'
+            totalSpace: 10
         }
     ]
     return (
